@@ -6,8 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonTypeAttribute, McBtnType } from "./components/mc-button/mc-button";
+import { ButtonTypeAttribute as ButtonTypeAttribute1, McIconBtnType } from "./components/mc-icon-button/mc-icon-button";
 import { McInputType } from "./components/mc-input/mc-input";
-import { BtnType, ButtonTypeAttribute as ButtonTypeAttribute1 } from "./components/mx-button/mx-button";
+import { BtnType, ButtonTypeAttribute as ButtonTypeAttribute2 } from "./components/mx-button/mx-button";
 import { ChartJsData, ChartJsOptions } from "./components/mx-chart/mx-chart";
 import { ChartType } from "chart.js";
 import { MxInputIcon } from "./components/mx-input/mx-input";
@@ -79,6 +80,30 @@ export namespace Components {
         "labelLeft": boolean;
         "labelName": string;
         "name": string;
+        "value": string;
+    }
+    interface McIconButton {
+        "btnType": McIconBtnType;
+        "disabled": boolean;
+        /**
+          * The aria-label attribute for the inner button element.
+         */
+        "elAriaLabel": string;
+        "form": string;
+        "formaction": string;
+        /**
+          * Create button as link
+         */
+        "href": string;
+        /**
+          * Class name of icon
+         */
+        "icon": string;
+        /**
+          * Only for link buttons
+         */
+        "target": string;
+        "type": ButtonTypeAttribute;
         "value": string;
     }
     interface McInput {
@@ -1294,6 +1319,12 @@ declare global {
         prototype: HTMLMcCheckboxElement;
         new (): HTMLMcCheckboxElement;
     };
+    interface HTMLMcIconButtonElement extends Components.McIconButton, HTMLStencilElement {
+    }
+    var HTMLMcIconButtonElement: {
+        prototype: HTMLMcIconButtonElement;
+        new (): HTMLMcIconButtonElement;
+    };
     interface HTMLMcInputElement extends Components.McInput, HTMLStencilElement {
     }
     var HTMLMcInputElement: {
@@ -1549,6 +1580,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mc-button": HTMLMcButtonElement;
         "mc-checkbox": HTMLMcCheckboxElement;
+        "mc-icon-button": HTMLMcIconButtonElement;
         "mc-input": HTMLMcInputElement;
         "mc-radio": HTMLMcRadioElement;
         "mc-range": HTMLMcRangeElement;
@@ -1651,6 +1683,30 @@ declare namespace LocalJSX {
         "labelLeft"?: boolean;
         "labelName"?: string;
         "name"?: string;
+        "value"?: string;
+    }
+    interface McIconButton {
+        "btnType"?: McIconBtnType;
+        "disabled"?: boolean;
+        /**
+          * The aria-label attribute for the inner button element.
+         */
+        "elAriaLabel"?: string;
+        "form"?: string;
+        "formaction"?: string;
+        /**
+          * Create button as link
+         */
+        "href"?: string;
+        /**
+          * Class name of icon
+         */
+        "icon"?: string;
+        /**
+          * Only for link buttons
+         */
+        "target"?: string;
+        "type"?: ButtonTypeAttribute;
         "value"?: string;
     }
     interface McInput {
@@ -2817,6 +2873,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mc-button": McButton;
         "mc-checkbox": McCheckbox;
+        "mc-icon-button": McIconButton;
         "mc-input": McInput;
         "mc-radio": McRadio;
         "mc-range": McRange;
@@ -2867,6 +2924,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mc-button": LocalJSX.McButton & JSXBase.HTMLAttributes<HTMLMcButtonElement>;
             "mc-checkbox": LocalJSX.McCheckbox & JSXBase.HTMLAttributes<HTMLMcCheckboxElement>;
+            "mc-icon-button": LocalJSX.McIconButton & JSXBase.HTMLAttributes<HTMLMcIconButtonElement>;
             "mc-input": LocalJSX.McInput & JSXBase.HTMLAttributes<HTMLMcInputElement>;
             "mc-radio": LocalJSX.McRadio & JSXBase.HTMLAttributes<HTMLMcRadioElement>;
             "mc-range": LocalJSX.McRange & JSXBase.HTMLAttributes<HTMLMcRangeElement>;

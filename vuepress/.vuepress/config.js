@@ -50,7 +50,7 @@ module.exports = {
     ],
     sidebar: {
       '/getting-started.html': ['getting-started'],
-      '/patterns/': ['introduction', 'filters'],
+      '/patterns/': ['introduction', 'dialogs', 'modals', 'focused-flow', 'contextual-panel', 'filters', 'signin-flow', 'signout-flow'],
       '/examples/': ['grid', 'flex'],
       '/css-documentation/': [
         'colors',
